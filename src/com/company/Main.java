@@ -33,12 +33,14 @@ public class Main {
         salsa.add("medium salsa");
         salsa.add("hot salsa");
         salsa.add("no salsa");
+        salsa.add("all");
 
         veggies.add("lettuce");
         veggies.add("fajita veggies");
         veggies.add("no veggies");
+        veggies.add("all");
 
-        int[] lenIng = {3,6,3,4,3};
+        int[] lenIng = {3,6,3,5,4};
         int x,y,z=0;
 
         String str="";
@@ -59,30 +61,46 @@ public class Main {
                 switch (j) {
                     case 0:
                         str=rice.get(y);
+                        System.out.print(rice.get(y)+", ");
                         break;
                     case 1:
                         str=meat.get(y);
-                       // System.out.print(meat.get(y));
+                        System.out.print(meat.get(y)+", ");
                         break;
                     case 2:
                         str=beans.get(y);
-                      //  System.out.print(beans.get(y));
+                        System.out.print(beans.get(y)+", ");
                         break;
                     case 3:
                         str=salsa.get(y);
-                      //  System.out.print(salsa.get(y));
+                        if (str=="all") {
+                            for (int m = 0; m < (salsa.size() - 2); m++) {
+                                System.out.print(salsa.get(m) + ", ");
+                            }
+                            count=count+2;
+                        }
+                        else{
+                                System.out.print(salsa.get(y)+", ");
+                        }
                         break;
                     case 4:
                         str=veggies.get(y);
-                      //  System.out.print(veggies.get(y));
+                        if (str=="all") {
+                            for (int n = 0; n < (veggies.size() - 2); n++) {
+                                System.out.print(veggies.get(n) + ", ");
+                            }
+                            count=count+1;
+                        }
+                        else {
+                            System.out.print(veggies.get(y) + ", ");
+                        }
                         break;
                     default:
                         break;
                 }
-                System.out.print(str + ", ");
+
                 if (str.substring(0,2).equals("no")) {
                     count=count-1;
-                    //System.out.print("count is "+count );
                 }
             }
             for (int k=0;k<4;k++) {
@@ -90,11 +108,8 @@ public class Main {
                 if (z==1) {
                     System.out.print(extraIngre[k] +", ");
                     count++;
-                    //System.out.print(count);
                 }
             }
-
-               // System.out.println(count + str.substring(0,2));
 
             price = 3 + (count*0.5);
 
