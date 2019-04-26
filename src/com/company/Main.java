@@ -50,7 +50,7 @@ public class Main {
 
 
         for (int i=1; i<26; i++) {
-            int count = 0;
+            int count = 5;
             double price =0;
             System.out.print("burrito " + i + ": ");
             for (int j = 0; j < 5; j++) {
@@ -97,10 +97,8 @@ public class Main {
                // System.out.println(count + str.substring(0,2));
 
             price = 3 + (count*0.5);
-            if (price<3){
-                price=3;
-            }
-            System.out.println("\b\b"+ " (" + (count+5) +") ==> Price : $" + String.format("%.2f",price));
+
+            System.out.println("\b\b"+ " (" + (count) +") ==> Price : $" + String.format("%.2f",price));
 
 
 
